@@ -2,7 +2,7 @@
 
 namespace ApiBurger_Application.Controllers
 {
-    public class IngredientesController : Controller
+    public class MakingsController : Controller
     {
         public IActionResult Index()
         {
