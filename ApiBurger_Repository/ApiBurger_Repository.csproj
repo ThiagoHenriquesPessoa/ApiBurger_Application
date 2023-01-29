@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ApiBurger_Domain\ApiBurger_Domain.csproj" />
+    <ProjectReference Include="..\ApiBurger_Infraestructure\ApiBurger_Infraestructure.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,6 @@
 ﻿using ApiBurger_Domain.Enum;
 
-namespace ApiBurger_Domain
+namespace ApiBurger_Domain.Entities
 {
     public class Status : Entity
     {

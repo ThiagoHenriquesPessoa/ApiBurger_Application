@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="InterfaceBusiness\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiBurger_Domain\ApiBurger_Domain.csproj" />
+    <ProjectReference Include="..\ApiBurger_Repository\ApiBurger_Repository.csproj" />
+  </ItemGroup>
+
 </Project>
