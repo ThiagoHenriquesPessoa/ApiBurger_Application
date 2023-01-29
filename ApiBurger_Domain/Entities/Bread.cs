@@ -2,6 +2,6 @@
 {
     public class Bread : Entity
     {
-        public string Tipo { get; set; }
+        public string Name { get; set; }
     }
 }
