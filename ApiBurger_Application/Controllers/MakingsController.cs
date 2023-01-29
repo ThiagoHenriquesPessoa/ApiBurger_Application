@@ -22,6 +22,12 @@ namespace ApiBurger_Application.Controllers
             return _breadBusiness.GetAllBread();
         }
 
+        [HttpGet("json/Bread/{id:int}")]
+        public Bread GetBread(int id)
+        {
+            return _breadBusiness.GetBread(id);
+        }
+
         [HttpPost("json/Save/Bread/")]
         public async Task<int> SaveBread([FromBody] Bread bread)
         {
@@ -32,6 +38,12 @@ namespace ApiBurger_Application.Controllers
         public async Task<int> UpdateBread(Bread bread)
         {
             return await _breadBusiness.UpdateBread(bread);
+        }
+
+        [HttpPost("json/Delete/Bread/")]
+        public async Task<int> DeleteBread(int id)
+        {
+            return await _breadBusiness.DeleteBread(id);
         }
     }
 }

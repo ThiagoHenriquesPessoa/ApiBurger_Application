@@ -11,7 +11,7 @@ namespace ApiBurger_Application.CrossCutting
              this IServiceCollection services)
         {
             services.AddScoped<IBreadBusiness, BreadBusiness>();
-            services.AddScoped<IBaseRepository<Object>, BaseRepository<Object>>();
+            services.AddScoped<IBreadRepository, BreadRepository>();
 
             return services;
         }

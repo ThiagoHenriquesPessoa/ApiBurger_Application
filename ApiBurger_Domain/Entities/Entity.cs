@@ -2,12 +2,12 @@
 {
     public class Entity
     {
-        public int Id { get; set; }
+        public int Id;
 
         public Entity()
         {
             Random id = new Random();
-            Id = id.Next();
+            Id = id.Next(10, 50);
         }
     }
 }
