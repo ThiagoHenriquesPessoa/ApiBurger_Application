@@ -5,7 +5,7 @@ namespace ApiBurger_Infraestructure.Data
 {
     public class SqlContext : DbContext
     {
-        public SqlContext(DbContextOptions<SqlContext> options) : base(options)
+        public SqlContext(DbContextOptions options) : base(options)
         {
         }
 
