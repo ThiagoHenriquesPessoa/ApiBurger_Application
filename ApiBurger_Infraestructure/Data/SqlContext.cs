@@ -1,5 +1,6 @@
 ﻿using ApiBurger_Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata;
 
 namespace ApiBurger_Infraestructure.Data
 {
@@ -9,6 +10,6 @@ namespace ApiBurger_Infraestructure.Data
         {
         }
 
-        public DbSet<Bread> Cliente { get; set; }
+        public DbSet<Bread> Bread { get; set; }
     }
 }

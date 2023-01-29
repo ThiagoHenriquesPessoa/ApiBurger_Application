@@ -1,8 +1,8 @@
 ﻿using ApiBurger_Domain.Entities;
 
-namespace ApiBurger_Business.InterfaceBusiness
+namespace ApiBurger_Repository.InterfaceRepositories
 {
-    public interface IBreadBusiness
+    public interface IBreadRepository
     {
         List<Bread> GetAllBread();
         Bread GetBread(int id);
