@@ -2,11 +2,13 @@
 
 namespace ApiBurger_Application.Controllers
 {
+    [Produces("application/json")]
+    [Route("Burger")]
     public class BurgerController : Controller
     {
-        public IActionResult Index()
+        public void GetBurger()
         {
-            return View();
+
         }
     }
 }

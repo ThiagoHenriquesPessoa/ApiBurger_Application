@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ApiBurger_Domain
+﻿namespace ApiBurger_Domain.Entities
 {
-    internal class Entity
+    public class Entity
     {
+        public int Id { get; set; }
+
+        public Entity()
+        {
+            Random id = new Random();
+            Id = id.Next();
+        }
     }
 }
