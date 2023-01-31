@@ -11,5 +11,9 @@ namespace ApiBurger_Infraestructure.Data
         }
 
         public DbSet<Bread> Bread { get; set; }
+        public DbSet<Meat> Meat { get; set; }
+        public DbSet<Optional> Optional { get; set; }
+        public DbSet<Status> Status { get; set; }
+        public DbSet<Burger> Burger { get; set; }
     }
 }

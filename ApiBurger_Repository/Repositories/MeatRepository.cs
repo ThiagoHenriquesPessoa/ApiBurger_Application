@@ -4,29 +4,42 @@ using ApiBurger_Repository.InterfaceRepositories;
 
 namespace ApiBurger_Repository.Repositories
 {
-    public class BreadRepository : IBreadRepository
+    public class MeatRepository : IMeatRepository
     {
         private readonly SqlContext _sqlContext;
 
-        public BreadRepository(SqlContext sqlContext)
+        public MeatRepository(SqlContext sqlContext)
         {
             _sqlContext = sqlContext;
         }
 
-        public List<Bread> GetAllBread()
+        public List<Meat> GetAllMeat()
         {
-            return _sqlContext.Set<Bread>().ToList();
-        }
-        public Bread GetBread(int id)
-        {
-            return _sqlContext.Bread.First(x => x.Id == id);
+            return _sqlContext.Set<Meat>().ToList();
         }
 
-        public async Task<int> SaveBread(Bread bread)
+        public Meat GetMeat(int id)
+        {
+            return _sqlContext.Meat.First(x => x.Id == id);
+        }
+        public async Task<int> SaveMeat(Meat meat)
         {
             try
             {
-                await _sqlContext.AddAsync(bread);
+                await _sqlContext.AddAsync(meat);
+                await _sqlContext.SaveChangesAsync();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public async Task<int> UpdateMeat(Meat meat)
+        {
+            try
+            {
+                _sqlContext.Update(meat);
                 await _sqlContext.SaveChangesAsync();
                 return 1;
             }
@@ -36,33 +49,19 @@ namespace ApiBurger_Repository.Repositories
             }
         }
 
-        public async Task<int> UpdateBread(Bread bread)
+        public async Task<int> DeleteMeat(int id)
         {
             try
             {
-                _sqlContext.Update(bread);
+                var meat = GetMeat(id);
+                _sqlContext.Remove(meat);
                 await _sqlContext.SaveChangesAsync();
                 return 1;
             }
             catch
             {
                 return 0;
-            }
-        }
-
-        public async Task<int> DeleteBread(int id)
-        {
-            try
-            {
-                var bread = GetBread(id);
-                _sqlContext.Remove(bread);
-                await _sqlContext.SaveChangesAsync();
-                return 1;
-            }
-            catch
-            {
-                return 0;
-            }
+            }            
         }
     }
 }
