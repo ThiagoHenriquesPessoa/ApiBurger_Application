@@ -1,6 +1,6 @@
 ﻿namespace ApiBurger_Domain.Entities
 {
-    public class Optional : Entity
+    public class Optional
     {
         public int Id { get; set; }
         public string Name { get; set; }

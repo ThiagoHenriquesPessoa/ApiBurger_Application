@@ -10,9 +10,14 @@ namespace ApiBurger_Application.CrossCutting
         public static IServiceCollection AddMyDependencyGroup(
              this IServiceCollection services)
         {
+            #region business
             services.AddScoped<IBreadBusiness, BreadBusiness>();
+            services.AddScoped<IMeatBusiness, MeatBusiness>();
+            #endregion
+            #region repository
             services.AddScoped<IBreadRepository, BreadRepository>();
-
+            services.AddScoped<IMeatRepository, MeatRepository>();
+            #endregion
             return services;
         }
     }
