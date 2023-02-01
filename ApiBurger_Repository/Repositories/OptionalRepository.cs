@@ -17,7 +17,8 @@ namespace ApiBurger_Repository.Repositories
         {
             try
             {
-                _sqlContext.Optional.Remove(id);
+                var optional = GetOptional(id);
+                _sqlContext.Optional.Remove(optional);
                 return 1;
             }
             catch
@@ -28,22 +29,40 @@ namespace ApiBurger_Repository.Repositories
 
         public List<Optional> GetAllOptional()
         {
-            throw new NotImplementedException();
+            return _sqlContext.Set<Optional>().ToList();
         }
 
         public Optional GetOptional(int id)
         {
-            throw new NotImplementedException();
+            return _sqlContext.Optional.First(x => x.Id == id);
         }
 
-        public Task<int> SaveOptional(Optional optional)
+        public async Task<int> SaveOptional(Optional optional)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _sqlContext.Optional.AddAsync(optional);
+                await _sqlContext.SaveChangesAsync();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
-        public Task<int> UpdateOptional(Optional optional)
+        public async Task<int> UpdateOptional(Optional optional)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _sqlContext.Optional.Update(optional);
+                await _sqlContext.SaveChangesAsync();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }
