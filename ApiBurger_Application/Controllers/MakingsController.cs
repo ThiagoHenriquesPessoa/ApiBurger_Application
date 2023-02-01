@@ -10,11 +10,15 @@ namespace ApiBurger_Application.Controllers
     {
         private readonly IBreadBusiness _breadBusiness;
         private readonly IMeatBusiness _meatBusiness;
+        private readonly IOptionalBusiness _optionalBusiness;
 
-        public MakingsController(IBreadBusiness breadBusiness, IMeatBusiness meatBusiness)
+        public MakingsController(IBreadBusiness breadBusiness, 
+                                 IMeatBusiness meatBusiness, 
+                                 IOptionalBusiness optionalBusiness)
         {
             _breadBusiness = breadBusiness;
             _meatBusiness = meatBusiness;
+            _optionalBusiness = optionalBusiness;
         }
 
         [HttpGet("json/List/Bread/")]
@@ -29,6 +33,12 @@ namespace ApiBurger_Application.Controllers
             return _meatBusiness.GetAllMeat();
         }
 
+        [HttpGet("json/List/Optional/")]
+        public List<Optional> GetAllOptional()
+        {
+            return _optionalBusiness.GetAllOptional();
+        }
+
         [HttpGet("json/Bread/{id:int}")]
         public Bread GetBread(int id)
         {
@@ -39,6 +49,12 @@ namespace ApiBurger_Application.Controllers
         public Meat GetMeat(int id)
         {
             return _meatBusiness.GetMeat(id);
+        }
+
+        [HttpGet("json/Optional/{id:int}")]
+        public Optional GetOptional(int id)
+        {
+            return _optionalBusiness.GetOptional(id);
         }
 
         [HttpPost("json/Save/Bread/")]
@@ -53,6 +69,12 @@ namespace ApiBurger_Application.Controllers
             return await _meatBusiness.SaveMeat(meat);
         }
 
+        [HttpPost("json/Save/Optional/")]
+        public async Task<int> SaveOptional([FromBody] Optional optional)
+        {
+            return await _optionalBusiness.SaveOptional(optional);
+        }
+
         [HttpPost("json/Update/Bread/")]
         public async Task<int> UpdateBread([FromBody] Bread bread)
         {
@@ -65,6 +87,12 @@ namespace ApiBurger_Application.Controllers
             return await _meatBusiness.UpdateMeat(meat);
         }
 
+        [HttpPost("json/Update/Optional/")]
+        public async Task<int> UpdateOptional([FromBody] Optional optional)
+        {
+            return await _optionalBusiness.UpdateOptional(optional);
+        }
+
         [HttpPost("json/Delete/Bread/")]
         public async Task<int> DeleteBread(int id)
         {
@@ -75,6 +103,12 @@ namespace ApiBurger_Application.Controllers
         public async Task<int> DeleteMeat(int id)
         {
             return await _meatBusiness.DeleteMeat(id);
+        }
+
+        [HttpPost("json/Delete/Optional/")]
+        public async Task<int> DeleteOptional(int id)
+        {
+            return await _optionalBusiness.DeleteOptional(id);
         }
     }
 }
