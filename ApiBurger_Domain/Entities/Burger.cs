@@ -6,6 +6,6 @@
         public Meat Meat { get; set; }
         public Bread Bread { get; set; }
         public Optional Optional { get; set; }
-        public Status Status { get; set; }
+        public int Status { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ApiBurger_Domain.Enum
 {
-    public enum StatusRequest
+    public enum Status
     {
         Requested = 0,
         InProduction = 1,
