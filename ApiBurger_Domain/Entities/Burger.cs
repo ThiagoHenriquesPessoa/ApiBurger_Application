@@ -1,11 +1,14 @@
-﻿namespace ApiBurger_Domain.Entities
+﻿using ApiBurger_Domain.Enum;
+
+namespace ApiBurger_Domain.Entities
 {
     public class Burger
     {
-        public int Id { get; set; }
-        public Meat Meat { get; set; }
-        public Bread Bread { get; set; }
-        public Optional Optional { get; set; }
-        public int Status { get; set; }
+        public int Id_Burger { get; set; }
+        public string Name { get; set; }
+        public int Id_Meat { get; set; }
+        public int Id_Bread { get; set; }
+        public Status Status { get; set; }
+        public List<Optional>? Optional { get; set; }        
     }
 }
