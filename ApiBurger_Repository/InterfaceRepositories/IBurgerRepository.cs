@@ -4,6 +4,6 @@ namespace ApiBurger_Repository.InterfaceRepositories
 {
     public interface IBurgerRepository
     {
-        Task<int> SaveBurger(Burger burger);
+        int SaveBurger(Burger burger);
     }
 }

@@ -13,12 +13,12 @@ namespace ApiBurger_Repository.Repositories
             _sqlContext = sqlContext;
         }
 
-        public async Task<int> SaveBurger(Burger burger)
+        public int SaveBurger(Burger burger)
         {
             try
             {
-                await _sqlContext.Burger.AddAsync(burger);
-                await _sqlContext.SaveChangesAsync();
+                _sqlContext.Burger.Add(burger);
+                _sqlContext.SaveChanges();
                 return burger.Id_Burger;
             }
             catch
