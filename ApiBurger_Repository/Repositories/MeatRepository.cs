@@ -20,7 +20,7 @@ namespace ApiBurger_Repository.Repositories
 
         public Meat GetMeat(int id)
         {
-            return _sqlContext.Meat.First(x => x.Id == id);
+            return _sqlContext.Meat.First(x => x.Id_Meat == id);
         }
         public async Task<int> SaveMeat(Meat meat)
         {

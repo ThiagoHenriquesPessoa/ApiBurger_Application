@@ -34,7 +34,7 @@ namespace ApiBurger_Repository.Repositories
 
         public Optional GetOptional(int id)
         {
-            return _sqlContext.Optional.First(x => x.Id == id);
+            return _sqlContext.Optional.First(x => x.Id_Optional == id);
         }
 
         public async Task<int> SaveOptional(Optional optional)

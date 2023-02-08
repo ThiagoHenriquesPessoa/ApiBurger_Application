@@ -26,7 +26,7 @@ namespace ApiBurger_Business.Business
                     var optionais = new Optionais
                     {
                         Id_Burger = burger.Id_Burger,
-                        Id_Optional = optional.Id
+                        Id_Optional = optional.Id_Optional
                     };
                 _optionaisRepository.SaveOptionais(optionais);
                 }
