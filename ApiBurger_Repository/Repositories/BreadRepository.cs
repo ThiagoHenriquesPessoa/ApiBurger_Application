@@ -19,7 +19,7 @@ namespace ApiBurger_Repository.Repositories
         }
         public Bread GetBread(int id)
         {
-            return _sqlContext.Bread.First(x => x.Id == id);
+            return _sqlContext.Bread.First(x => x.Id_Bread == id);
         }
 
         public async Task<int> SaveBread(Bread bread)

@@ -1,8 +1,11 @@
-﻿namespace ApiBurger_Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ApiBurger_Domain.Entities
 {
     public class Meat
     {
-        public int Id { get; set; }
+        [Key]
+        public int Id_Meat { get; set; }
         public string Name { get; set; }
     }
 }
